@@ -4,8 +4,23 @@
             <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$">
             <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$">
 
-            <input type="email" name="email" class="xlg span-all-cols" placeholder="Email" pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" required />
-            <input type="password" name="password" class="xlg span-all-cols" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w]{8,30}$" autocomplete="new-password" required/>
+            <input type="email" name="email" class="xlg span-all-cols" placeholder="Email"
+                   pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" required />
+            <input type="password" name="password" class="xlg span-all-cols" placeholder="Password"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w]{8,30}$" autocomplete="new-password" required/>
+            <input type="text" name="company" class="xlg" placeholder="Company" pattern="^[a-zA-Z0-9]+$"
+                   title="Alphanumeric ONLY"/>
+
+            <input type="tel" name="phone" class="xlg" placeholder="Phone Number" pattern="^[0-9]{10}$" required />
+
+            <select name="role" class="xxlg">
+                <option selected="true" disabled="true">Role</option>
+                <option value="MANAGER">Manager</option>
+                <option value="JUNIOR">Junior Developer</option>
+                <option value="SENIOR">Senior Developer</option>
+            </select>
+
+            <textarea name="description" class="xlg span-all-cols" placeholder="Description"></textarea>
 
             <input type="hidden" name="_csrf" value="{{csurf_token}}" />
 
