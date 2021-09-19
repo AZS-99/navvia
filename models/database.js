@@ -1,5 +1,6 @@
 const pg = require('pg')
 const Sequelize = require('sequelize')
+const {obj_toLowerCase} = require("../middlewares/helpers");
 pg.defaults.ssl = process.env.NODE_ENV === 'production'? {rejectUnauthorized: false} : false
 
 const database = new Sequelize(process.env.DATABASE_URL)
@@ -14,9 +15,31 @@ module.exports.initialise = async () => {
 
 module.exports.add_employee = async (employee) => {
     try {
-        employee.forename = employee.forename.toLowerCase()
-        employee.surname = employee.surname.toLowerCase()
-        employee.company = employee.company.toLowerCase()
+        obj_toLowerCase(employee)
         await employees.create(employee)
     } catch (e) { throw e}
+}
+
+
+module.exports.delete_employee = async (employee_id) => {
+    try { await employees.destroy({where: {id: employee_id}}) }
+    catch (e) { throw e}
+}
+
+
+module.exports.get_employee = async (obj) => {
+    try { return await employees.findOne({where: obj, raw: true}) }
+    catch (e) { throw e }
+}
+
+
+module.exports.get_employees = async (obj) => {
+    try { return await employees.findAll({where: obj, raw: true}) }
+    catch (e) { throw e }
+}
+
+
+module.exports.update_employee = async (employee) => {
+    try { await employees.update(employee, {where: {id: employee.id}}) }
+    catch (e) { throw e }
 }

@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt')
 
 module.exports = (database, Sequelize) => {
     return database.define('employees', {
@@ -29,16 +28,6 @@ module.exports = (database, Sequelize) => {
                 isEmail: true
             }
         },
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            validate: {
-                is: {
-                    args: /^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9$&+,:;=?@#|<>.^*()%!_-]{8,30}$/,
-                    msg: ['Database rejected password']
-                }
-            }
-        },
         phone: {
             type: Sequelize.STRING,
             unique: true,
@@ -56,16 +45,10 @@ module.exports = (database, Sequelize) => {
                 isAlphanumeric: true
             }
         },
-        role: Sequelize.ENUM('MANAGER', 'SENIOR', 'INTERMEDIATE', 'JUNIOR', 'JANITOR', 'GUARD', 'HR'),
+        role: Sequelize.ENUM('manager', 'senior', 'intermediate', 'junior', 'janitor', 'guard', 'hr'),
         description: {
             type: Sequelize.TEXT,
             allowNull: true
-        }
-    }, {
-        hooks: {
-            afterValidate: async (employees, options) => {
-                employees.password = await bcrypt.hash(employees.password, Number(process.env.SALT_ROUNDS))
-            }
         }
     })
 }

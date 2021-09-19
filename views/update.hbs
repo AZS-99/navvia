@@ -1,0 +1,90 @@
+<div class="fill-screen flex-ctr bg-black-50pt">
+    <form action="/employees/update" method="POST" class="bg-black">
+        <fieldset class="grid-2x0-gap1 p3">
+            {{#with employee}}
+                <div class="flex-TTB">
+                    <label class="txt-white xlg">Forename</label>
+                    <div class="flex">
+                        <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                               value="{{forename}}" disabled>
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+                <div class="flex-TTB">
+                    <label class="txt-white xlg">Surname</label>
+                    <div class="flex">
+                        <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                               value="{{surname}}" disabled>
+                        <button type="button" class="xlg">Edit</button>
+
+                    </div>
+                </div>
+
+                <div class="flex-TTB span-all-cols">
+                    <label class="txt-white xlg">Email</label>
+                    <div class="flex span-all-cols">
+                        <input type="email" name="email" class="xlg grow1" placeholder="Email"
+                               pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" value="{{email}}" required disabled />
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+                <div class="flex-TTB">
+                    <label class="txt-white xlg">Phone</label>
+                    <div class="flex">
+                        <input type="tel" name="phone" class="xlg" placeholder="Phone Number" pattern="^[0-9]{10}$"
+                               value="{{phone}}" required disabled />
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+
+                <div class="flex-TTB">
+                    <label class="txt-white xlg">Company</label>
+                    <div class="flex">
+                        <input type="text" name="company" class="xlg" placeholder="Company" pattern="^[a-zA-Z0-9]+$"
+                               title="Alphanumeric ONLY" value="{{company}}" disabled />
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+
+                <div class="flex-TTB">
+                    <label class="txt-white xlg">Role</label>
+                    <div class="flex">
+                        <select name="role" class="xlg grow1" disabled>
+                            <option {{#if (equals value "MANAGER")}}selected="true"{{/if}}>Manager</option>
+                            <option {{#if (equals value "JUNIOR")}}selected="true"{{/if}} value="JUNIOR">Junior Developer</option>
+                            <option {{#if (equals value "SENIOR")}}selected="true"{{/if}} value="SENIOR">Senior Developer</option>
+                        </select>
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+
+                <div class="flex-TTB span-all-cols">
+                    <label class="txt-white xlg">Description</label>
+                    <div class="flex-alignCtr">
+                        <textarea name="description" class="xlg grow1" placeholder="Description" value="{{description}}"></textarea>
+                        <button type="button" class="xlg">Edit</button>
+                    </div>
+                </div>
+
+
+
+                <input type="hidden" name="_csrf" value="{{csurf_token}}"/>
+                <input type="hidden" name="id" value="{{id}}" />
+
+                <div class="span-all-cols flex-spaceEvenly">
+                    <button class="xlg luminous-blue">Submit</button>
+                    <button type="reset" class="xlg luminous-red">Reset</button>
+
+                </div>
+            {{/with}}
+
+        </fieldset>
+    </form>
+</div>
+
+<script src="../public/javascripts/update.js"></script>
