@@ -65,6 +65,7 @@
                     <label class="txt-white xlg">Role</label>
                     <div class="flex">
                         <select name="role" class="xlg grow1" disabled>
+                            <option {{#unless role}}selected="true" disabled="true"{{/unless}}>Role</option>
                             <option {{#if (equals role "manager")}}selected="true"{{/if}} value="manager">Manager</option>
                             <option {{#if (equals role "developer")}}selected="true"{{/if}} value="developer">Developer</option>
                             <option {{#if (equals role "guard")}}selected="true"{{/if}} value="guard">Developer</option>
