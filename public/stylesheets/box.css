@@ -32,6 +32,10 @@
     border: 2px solid;
 }
 
+*.border-1px-theme {
+    border: 1px solid var(--theme-colour)
+}
+
 *.border-1px-grey {
     border: 1px solid gray;
 }

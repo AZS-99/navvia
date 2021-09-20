@@ -1,0 +1,57 @@
+
+
+.btn-electric {
+    border: 1px solid green;
+    backdrop-filter: blur(10px);
+    transform: skewX(-10deg);
+    height: 50px;
+    width: 200px;
+    border-radius: 20px 5px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    font: 15px sans-serif;
+    font-weight: 300;
+    text-shadow: 0 0 20px #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-electric:before {
+    content: "";
+    display: block;
+    width: calc(100% - 22px);
+    height: calc(50px - 8px);
+    left: 10px;
+    top: 3px;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px 3px 15px 3px; }
+.btn-electric.fire {
+    border-color: #ffeca8;
+    background-image: linear-gradient(to bottom, rgba(255, 138, 48, 0.6), rgba(240, 96, 29, 0.6));
+    box-shadow: 0 0 70px rgba(255, 138, 48, 0.6), 0 5px 20px rgba(255, 138, 48, 0.6), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #ffeca8; }
+.btn-electric.fire:before {
+    box-shadow: inset 0 0 30px 0 #ffeca8; }
+.btn-electric.ice {
+    border-color: #a8ecff;
+    background-image: linear-gradient(to bottom, rgba(48, 138, 255, 0.5), rgba(29, 96, 240, 0.5));
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.5), 0 5px 20px rgba(48, 138, 255, 0.5), inset 0 1px #ffeca8, inset 0 -1px #ffeca8;
+    color: #a8ecff; }
+.btn-electric.ice:before {
+    box-shadow: inset 0 0 30px 0 #a8ecff; }
+.btn-electric:hover.fire {
+    box-shadow: 0 0 70px rgba(255, 138, 48, 0.8), 0 5px 20px rgba(255, 138, 48, 0.8), inset 0 1px #ffeca8, inset 0 -1px #ffeca8; }
+.btn-electric:hover.fire:before {
+    box-shadow: inset 0 0 50px 0 #ffeca8; }
+.btn-electric:hover.ice {
+    box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff; }
+.btn-electric:hover.ice:before {
+    box-shadow: inset 0 0 50px 0 #a8ecff; }
+
+
+
+

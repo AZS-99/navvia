@@ -8,9 +8,11 @@
 @import "position.css";
 @import "typography.css";
 @import "logo.css";
+@import "buttons.css";
+@import "form.css";
 
 :root {
-  --theme-colour: #28a745;
+  --theme-colour: #070675;
 }
 
 a {

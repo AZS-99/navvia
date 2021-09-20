@@ -1,5 +1,6 @@
-<div class="fill-screen flex-ctr bg-black-50pt">
-    <form action="/employees/register" method="POST" class="bg-black">
+
+<div class="fill-screen flex-ctr bg-theme-grad">
+    <form action="/employees/register" method="POST" class="bg-white">
         <fieldset class="grid-2x0-gap1 p3">
             <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$" required>
             <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$" required>
@@ -15,9 +16,9 @@
 
             <select name="role" class="xxlg">
                 <option selected="true" disabled="true">Role</option>
-                <option value="MANAGER">Manager</option>
-                <option value="JUNIOR">Junior Developer</option>
-                <option value="SENIOR">Senior Developer</option>
+                <option value="manager">Manager</option>
+                <option value="junior">Junior Developer</option>
+                <option value="senior">Senior Developer</option>
             </select>
 
             <textarea name="description" class="xlg span-all-cols" placeholder="Description"></textarea>
@@ -25,8 +26,8 @@
             <input type="hidden" name="_csrf" value="{{csurf_token}}" />
 
             <div class="span-all-cols flex-spaceEvenly">
-                <button class="xlg luminous-blue">Submit</button>
-                <button class="xlg luminous-red" type="button"><label for="sign_up">Cancel</label></button>
+                <button class="xlg btn-electric ice">Submit</button>
+                <a class="xlg btn-electric fire" href="/">Cancel</a>
             </div>
         </fieldset>
     </form>
