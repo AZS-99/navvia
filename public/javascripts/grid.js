@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', e => {
 
     for(let form of forms_delete) {
         form.addEventListener('submit', e => {
-            return (window.confirm('This action is irreversible. Do you want to proceed with deleting the data of the ' +
-                'selected employee?'))? true : e.preventDefault()
+            return (window.confirm('This action once executed is irreversible! Do you want to proceed with deleting the ' +
+                'data of the selected employee?'))? true : e.preventDefault()
         })
     }
 })
