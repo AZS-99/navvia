@@ -1,5 +1,5 @@
-<div class="fill-screen flex-ctr bg-theme-grad">
-    <div class="absolute top0 p3">
+<div class="fill-screen flex-TTB-alignCtr-spaceEvenly bg-theme-grad">
+    <a class="absolute top0 p3" href="/">
         <div class="plane main">
             <div class="circle"></div>
             <div class="circle"></div>
@@ -9,27 +9,35 @@
             <div class="circle"></div>
         </div>
         <h1 class=" txt-white">NAVVIA</h1>
-    </div>
+    </a>
+
+
 
     <form action="/employees/register" method="POST" class="shadow">
         <fieldset class="grid-2x0-gap1 p3">
-            <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$" required>
-            <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$" required>
+            <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                   title="Only alphabets are allowed" required>
+            <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                   title="Only alphabets are allowed" required>
 
             <input type="email" name="email" class="xlg span-all-cols" placeholder="Email"
-                   pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" required />
+                   pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,5}$" required />
 
-            <input type="tel" name="phone" class="xlg" placeholder="Phone Number" pattern="^[0-9]{10}$" required />
+            <input type="tel" name="phone" class="xlg" placeholder="Phone Number" pattern="^[0-9]{10}$"
+                   title="Only numerics are allowed" required />
 
 
             <input type="text" name="company" class="xlg" placeholder="Company" pattern="^[a-zA-Z0-9]+$"
-                   title="Alphanumeric ONLY"/>
+                   title="Only alphanumeric characters are allowed"/>
 
-            <select name="role" class="xxlg">
+            <select name="role" class="xlg">
                 <option selected="true" disabled="true">Role</option>
+                <option value="developer">Developer</option>
+                <option value="guard">Guard</option>
+                <option value="hr">HR</option>
+                <option value="janitor">Janitor</option>
                 <option value="manager">Manager</option>
-                <option value="junior">Junior Developer</option>
-                <option value="senior">Senior Developer</option>
+
             </select>
 
             <textarea name="description" class="xlg span-all-cols" placeholder="Description"></textarea>
@@ -37,9 +45,15 @@
             <input type="hidden" name="_csrf" value="{{csurf_token}}" />
 
             <div class="span-all-cols flex-spaceEvenly">
-                <button class="xlg btn-electric ice">Submit</button>
+                <button type="submit" class="xlg btn-electric ice">Submit</button>
                 <a class="xlg btn-electric fire" href="/">Cancel</a>
             </div>
         </fieldset>
     </form>
+
+    <div class="absolute bottom0 p4 xlg txt-red pulse" id="feedback"></div>
 </div>
+
+
+
+<script src="../public/javascripts/register.js"></script>

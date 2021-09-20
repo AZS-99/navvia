@@ -18,6 +18,18 @@ router.post('/delete/:id', async (req, res) => {
 })
 
 
+router.post('/email_exists', async (req, res) => {
+  try {
+    const [count_obj] = await database.count_employees('email', req.body.email)
+
+    res.send( {exists: count_obj.count > 0})
+
+  } catch (e) {
+
+  }
+})
+
+
 router.get('/get/:id', async (req, res) => {
   try {
     res.send(await database.get_employee({id: req.params.id}))

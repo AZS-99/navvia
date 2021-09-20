@@ -10,6 +10,10 @@ And the third is for the alignment
     text-transform: capitalize;
 }
 
+*.all-caps {
+    text-transform: uppercase;
+}
+
 *.B {
     font-weight: bold;
 }

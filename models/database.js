@@ -1,6 +1,7 @@
 const pg = require('pg')
 const Sequelize = require('sequelize')
 const {obj_toLowerCase} = require("../middlewares/helpers");
+const {QueryTypes} = require("sequelize");
 pg.defaults.ssl = process.env.NODE_ENV === 'production'? {rejectUnauthorized: false} : false
 
 const database = new Sequelize(process.env.DATABASE_URL)
@@ -10,6 +11,18 @@ const employees = require('./employees')(database, Sequelize)
 module.exports.initialise = async () => {
     try { await database.sync() }
     catch (e) { throw e }
+}
+
+
+module.exports.count_employees = async (field, value) => {
+    try {
+        return database.query(`SELECT COUNT(*) FROM employees WHERE ${field} = :value`, {
+            replacements: { value: value },
+            type: QueryTypes.SELECT
+        })
+    } catch (e) {
+        
+    }
 }
 
 

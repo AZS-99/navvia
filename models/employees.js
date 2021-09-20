@@ -45,7 +45,7 @@ module.exports = (database, Sequelize) => {
                 isAlphanumeric: true
             }
         },
-        role: Sequelize.ENUM('manager', 'senior', 'intermediate', 'junior', 'janitor', 'guard', 'hr'),
+        role: Sequelize.ENUM('manager', 'developer', 'janitor', 'guard', 'hr'),
         description: {
             type: Sequelize.TEXT,
             allowNull: true

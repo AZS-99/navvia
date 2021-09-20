@@ -1,5 +1,5 @@
 <div class="fill-screen flex-TTB-alignCtr bg-theme-grad">
-    <div class="p2">
+    <a class="p2" href="/">
         <div class="plane main">
             <div class="circle"></div>
             <div class="circle"></div>
@@ -9,25 +9,25 @@
             <div class="circle"></div>
         </div>
         <h1 class=" txt-white">NAVVIA</h1>
-    </div>
+    </a>
     <form action="/employees/update" method="POST" class="shadow">
         <fieldset class="grid-2x0-gap1 p3">
             {{#with employee}}
                 <div class="flex-TTB">
                     <label class="txt-white xlg">Forename</label>
                     <div class="flex">
-                        <input type="text" name="forename" class="xlg" placeholder="John" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                        <input type="text" name="forename" class="xlg" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
                                value="{{forename}}" disabled>
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
                 <div class="flex-TTB">
                     <label class="txt-white xlg">Surname</label>
                     <div class="flex">
-                        <input type="text" name="surname" class="xlg" placeholder="Doe" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
+                        <input type="text" name="surname" class="xlg" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
                                value="{{surname}}" disabled>
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
 
                     </div>
                 </div>
@@ -35,18 +35,18 @@
                 <div class="flex-TTB span-all-cols">
                     <label class="txt-white xlg">Email</label>
                     <div class="flex span-all-cols">
-                        <input type="email" name="email" class="xlg grow1" placeholder="Email"
+                        <input type="email" name="email" class="xlg grow1"
                                pattern="^[a-z_\d.]{2,30}@[a-z]{2,11}\.[a-z]{2,4}$" value="{{email}}" required disabled />
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
                 <div class="flex-TTB">
                     <label class="txt-white xlg">Phone</label>
                     <div class="flex">
-                        <input type="tel" name="phone" class="xlg" placeholder="Phone Number" pattern="^[0-9]{10}$"
+                        <input type="tel" name="phone" class="xlg"  pattern="^[0-9]{10}$"
                                value="{{phone}}" required disabled />
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
@@ -54,9 +54,9 @@
                 <div class="flex-TTB">
                     <label class="txt-white xlg">Company</label>
                     <div class="flex">
-                        <input type="text" name="company" class="xlg" placeholder="Company" pattern="^[a-zA-Z0-9]+$"
+                        <input type="text" name="company" class="xlg" pattern="^[a-zA-Z0-9]+$"
                                title="Alphanumeric ONLY" value="{{company}}" disabled />
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
@@ -65,11 +65,13 @@
                     <label class="txt-white xlg">Role</label>
                     <div class="flex">
                         <select name="role" class="xlg grow1" disabled>
-                            <option {{#if (equals value "MANAGER")}}selected="true"{{/if}}>Manager</option>
-                            <option {{#if (equals value "JUNIOR")}}selected="true"{{/if}} value="JUNIOR">Junior Developer</option>
-                            <option {{#if (equals value "SENIOR")}}selected="true"{{/if}} value="SENIOR">Senior Developer</option>
+                            <option {{#if (equals role "manager")}}selected="true"{{/if}} value="manager">Manager</option>
+                            <option {{#if (equals role "developer")}}selected="true"{{/if}} value="developer">Developer</option>
+                            <option {{#if (equals role "guard")}}selected="true"{{/if}} value="guard">Developer</option>
+                            <option {{#if (equals role "hr")}}selected="true"{{/if}} value="hr">HR</option>
+                            <option {{#if (equals role "janitor")}}selected="true"{{/if}} value="janitor">Janitor</option>
                         </select>
-                        <button type="button" class="xlg">Edit</button>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
@@ -77,8 +79,8 @@
                 <div class="flex-TTB span-all-cols">
                     <label class="txt-white xlg">Description</label>
                     <div class="flex-alignCtr">
-                        <textarea name="description" class="xlg grow1" placeholder="Description" value="{{description}}"></textarea>
-                        <button type="button" class="xlg">Edit</button>
+                        <textarea name="description" class="xlg grow1" disabled>{{description}}</textarea>
+                        <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
 
