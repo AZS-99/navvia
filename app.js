@@ -4,6 +4,7 @@ const express = require('express');
 const exphbs = require('express-handlebars')
 const path = require('path');
 const logger = require('morgan');
+const helmet = require('helmet')
 
 
 const indexRouter = require('./routes/index');
@@ -23,6 +24,8 @@ app.engine('hbs', exphbs({
     }
   }
 }))
+
+app.use(helmet())
 
 app.use(logger('dev'));
 app.use(express.json());
