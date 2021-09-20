@@ -1,5 +1,16 @@
-<div class="fill-screen flex-ctr bg-black-50pt">
-    <form action="/employees/update" method="POST" class="bg-black">
+<div class="fill-screen flex-TTB-alignCtr bg-theme-grad">
+    <div class="p2">
+        <div class="plane main">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <h1 class=" txt-white">NAVVIA</h1>
+    </div>
+    <form action="/employees/update" method="POST" class="shadow">
         <fieldset class="grid-2x0-gap1 p3">
             {{#with employee}}
                 <div class="flex-TTB">
@@ -77,8 +88,8 @@
                 <input type="hidden" name="id" value="{{id}}" />
 
                 <div class="span-all-cols flex-spaceEvenly">
-                    <button class="xlg luminous-blue">Submit</button>
-                    <button type="reset" class="xlg luminous-red">Reset</button>
+                    <button class="xlg btn-electric ice">Submit</button>
+                    <button type="reset" class="xlg btn-electric fire">Reset</button>
 
                 </div>
             {{/with}}
