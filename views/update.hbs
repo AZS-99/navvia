@@ -16,8 +16,8 @@
                 <div class="flex-TTB">
                     <label class="txt-white xlg">Forename</label>
                     <div class="flex">
-                        <input type="text" name="forename" class="xlg" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
-                               value="{{forename}}" disabled>
+                        <input type="text" name="forename" class="xlg" pattern="^([A-Z]|[a-z])[a-z]{2,20}$"
+                               value="{{forename}}" title="Only alphabets, min two characters" disabled>
                         <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <label class="txt-white xlg">Surname</label>
                     <div class="flex">
                         <input type="text" name="surname" class="xlg" pattern="^([A-Z]|[a-z])[a-z]{1,20}$"
-                               value="{{surname}}" disabled>
+                               value="{{surname}}" title="Only alphabets, min two characters" disabled>
                         <button type="button" class="xlg luminous-yellow">Edit</button>
 
                     </div>
@@ -45,7 +45,7 @@
                     <label class="txt-white xlg">Phone</label>
                     <div class="flex">
                         <input type="tel" name="phone" class="xlg"  pattern="^[0-9]{10}$"
-                               value="{{phone}}" required disabled />
+                               value="{{phone}}" title="Exactly 10 numerics are required" required disabled />
                         <button type="button" class="xlg luminous-yellow">Edit</button>
                     </div>
                 </div>
